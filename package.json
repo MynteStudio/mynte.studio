@@ -16,6 +16,7 @@
   },
   "imports": {
     "#core/*": "./app/core/*.js",
+    "#inquiry/*": "./app/inquiry/*.js",
     "#providers/*": "./providers/*.js",
     "#database/*": "./database/*.js",
     "#tests/*": "./tests/*.js",

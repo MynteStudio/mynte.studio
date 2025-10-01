@@ -9,4 +9,8 @@
 
 import router from '@adonisjs/core/services/router'
 
+const InquiryController = () => import('#inquiry/controllers/inquiry_controller')
+
 router.on('/').renderInertia('home').as('home.render')
+
+router.post('/inquiry', [InquiryController, 'execute']).as('inquiry.execute')
