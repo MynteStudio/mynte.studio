@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Head } from '@inertiajs/vue3'
+import Booking from '~/components/booking.vue'
 import InquiryForm from '~/components/inquiry_form.vue'
 
 defineProps<{
@@ -12,4 +13,5 @@ defineProps<{
   <h1>Homepage</h1>
 
   <InquiryForm :errors />
+  <Booking />
 </template>
