@@ -30,7 +30,10 @@ function handleSubmit() {
 </script>
 
 <template>
-  <span v-if="isSent" class="text-green">Your request has been sent!</span>
+  <span v-if="errors?.code === 'E_TOO_MANY_REQUESTS'" class="text-red">
+    Too many requests! Please retry in 1 minute.</span
+  >
+  <span v-else-if="isSent" class="text-green">Your request has been sent!</span>
   <form method="post" :action="tuyau.$url('inquiry.execute')" @submit.prevent="handleSubmit">
     <Input
       id="fullName"
