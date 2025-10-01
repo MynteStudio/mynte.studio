@@ -1,5 +1,5 @@
 {
-  "extends": "@adonisjs/tsconfig/tsconfig.client.json",
+  "extends": "@julr/tooling-configs/tsconfigs/tsconfig.vue",
   "compilerOptions": {
     "baseUrl": ".",
     "jsx": "preserve",
