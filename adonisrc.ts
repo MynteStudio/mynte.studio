@@ -25,7 +25,7 @@ export default defineConfig({
   | will be scanned automatically from the "./commands" directory.
   |
   */
-  commands: [() => import('@adonisjs/core/commands'), () => import('@tuyau/core/commands')],
+  commands: [() => import('@adonisjs/core/commands'), () => import('@tuyau/core/commands'), () => import('@adonisjs/mail/commands')],
 
   /*
   |--------------------------------------------------------------------------
@@ -52,6 +52,7 @@ export default defineConfig({
     () => import('@adonisjs/cors/cors_provider'),
     () => import('@adonisjs/inertia/inertia_provider'),
     () => import('@tuyau/core/tuyau_provider'),
+    () => import('@adonisjs/mail/mail_provider')
   ],
 
   /*
