@@ -7,4 +7,3 @@ import { Head } from '@inertiajs/vue3'
 
   <h1>Homepage</h1>
 </template>
-

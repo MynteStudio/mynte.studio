@@ -3,10 +3,10 @@
 
 import '../css/reset.css'
 import 'virtual:uno.css'
+import { resolvePageComponent } from '@adonisjs/inertia/helpers'
+import { createInertiaApp } from '@inertiajs/vue3'
 import { createSSRApp, h } from 'vue'
 import type { DefineComponent } from 'vue'
-import { createInertiaApp } from '@inertiajs/vue3'
-import { resolvePageComponent } from '@adonisjs/inertia/helpers'
 
 const appName = import.meta.env.VITE_APP_NAME || 'Mynte Studio'
 

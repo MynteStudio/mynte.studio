@@ -1,9 +1,9 @@
-import { defineConfig } from 'vite'
 import { getDirname } from '@adonisjs/core/helpers'
 import Inertia from '@adonisjs/inertia/client'
-import Vue from '@vitejs/plugin-vue'
 import Adonisjs from '@adonisjs/vite/client'
+import Vue from '@vitejs/plugin-vue'
 import UnoCSS from 'unocss/vite'
+import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [
