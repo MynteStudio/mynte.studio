@@ -28,6 +28,20 @@ const routes = [
   },
   {
     params: [],
+    name: 'legal_disclaimer.render',
+    path: '/legal-disclaimer',
+    method: ["GET","HEAD"],
+    types: {} as unknown,
+  },
+  {
+    params: [],
+    name: 'terms-of-service.render',
+    path: '/terms-of-service',
+    method: ["GET","HEAD"],
+    types: {} as unknown,
+  },
+  {
+    params: [],
     name: 'inquiry.execute',
     path: '/inquiry',
     method: ["POST"],
