@@ -9,7 +9,7 @@ export default julr(
     },
   },
   {
-    ignores: [],
+    ignores: ['.adonisjs/*'],
   },
   {
     rules: {
