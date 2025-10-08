@@ -8,8 +8,9 @@
 */
 
 import router from '@adonisjs/core/services/router'
+import { inquiryThrottle } from './limiter.js'
 
 const InquiryController = () => import('#controllers/inquiry_controller')
 
 router.on('/').renderInertia('home').as('home.render')
-router.post('/inquiry', [InquiryController, 'execute']).as('inquiry.execute')
+router.post('/inquiry', [InquiryController, 'execute']).use(inquiryThrottle).as('inquiry.execute')
