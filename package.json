@@ -10,6 +10,7 @@
     "dev": "node ace serve --hmr",
     "test": "node ace test",
     "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "typecheck": "tsc --noEmit"
   },
@@ -39,6 +40,7 @@
     "@japa/assert": "^4.0.1",
     "@japa/plugin-adonisjs": "^4.0.0",
     "@japa/runner": "^4.2.0",
+    "@julr/tooling-configs": "^4.0.0",
     "@swc/core": "1.11.24",
     "@types/node": "^22.15.18",
     "@types/react": "^19.2.2",
@@ -76,5 +78,5 @@
       "./app/middleware/*.ts"
     ]
   },
-  "prettier": "@adonisjs/prettier-config"
+  "prettier": "@julr/tooling-configs/prettier"
 }
