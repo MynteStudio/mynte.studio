@@ -1,0 +1,12 @@
+.modal {
+  @apply py-1 flex flex-col gap-1 rounded-lg;
+  position: absolute;
+  width: 9rem;
+  bottom: -1rem;
+  right: 0;
+  transform: translateY(100%);
+}
+
+.modal > a {
+  @apply mx-1 px-3 py-[0.625rem] flex items-center gap-3 rounded-lg border border-transparent hover:glass;
+}
