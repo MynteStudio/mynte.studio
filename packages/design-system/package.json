@@ -12,7 +12,19 @@
   },
   "exports": {
     "./fonts": "./src/css/fonts.css",
-    "./reset": "./src/css/reset.css"
+    "./reset": "./src/css/reset.css",
+    "./available": "./src/atoms/available/available.tsx",
+    "./cta": "./src/atoms/cta/cta.tsx",
+    "./dxb-time": "./src/atoms/dxb-time/dxb_time.tsx",
+    "./dynamic-island": "./src/molecules/dynamic-island/dynamic_island.tsx",
+    "./external-links": "./src/molecules/external-links/external_links.tsx",
+    "./field": "./src/atoms/field/field.tsx",
+    "./header": "./src/organisms/header/header.tsx",
+    "./icon": "./src/atoms/icon/icon.tsx",
+    "./information": "./src/atoms/information/information.tsx",
+    "./logo": "./src/atoms/logo/logo.tsx",
+    "./text-section": "./src/atoms/text-section/text_section.tsx",
+    "./toast": "./src/atoms/toast/index.ts"
   },
   "dependencies": {
     "@ark-ui/react": "^5.26.0",
