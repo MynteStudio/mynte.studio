@@ -8,33 +8,37 @@ import type { MakeTuyauRequest, MakeTuyauResponse } from '@tuyau/utils/types'
 import type { InferInput } from '@vinejs/vine/types'
 
 type InquiryPost = {
-  request: MakeTuyauRequest<InferInput<typeof import('../app/validators/inquiry.ts')['inquiryValidator']>>
-  response: MakeTuyauResponse<import('../app/controllers/inquiry_controller.ts').default['execute'], true>
+  request: MakeTuyauRequest<
+    InferInput<(typeof import('../app/validators/inquiry.ts'))['inquiryValidator']>
+  >
+  response: MakeTuyauResponse<
+    import('../app/controllers/inquiry_controller.ts').default['execute'],
+    true
+  >
 }
 export interface ApiDefinition {
-  'inquiry': {
-    '$url': {
-    };
-    '$post': InquiryPost;
-  };
+  inquiry: {
+    $url: {}
+    $post: InquiryPost
+  }
 }
 const routes = [
   {
     params: [],
     name: 'home.render',
     path: '/',
-    method: ["GET","HEAD"],
+    method: ['GET', 'HEAD'],
     types: {} as unknown,
   },
   {
     params: [],
     name: 'inquiry.execute',
     path: '/inquiry',
-    method: ["POST"],
+    method: ['POST'],
     types: {} as InquiryPost,
   },
-] as const;
+] as const
 export const api = {
   routes,
-  definition: {} as ApiDefinition
+  definition: {} as ApiDefinition,
 }

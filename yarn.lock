@@ -5967,7 +5967,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^9.26.0":
+"eslint@npm:^9.26.0, eslint@npm:^9.37.0":
   version: 9.37.0
   resolution: "eslint@npm:9.37.0"
   dependencies:
@@ -8996,6 +8996,10 @@ __metadata:
 "root-workspace-0b6124@workspace:.":
   version: 0.0.0-use.local
   resolution: "root-workspace-0b6124@workspace:."
+  dependencies:
+    "@julr/tooling-configs": "npm:^4.0.0"
+    eslint: "npm:^9.37.0"
+    prettier: "npm:^3.6.2"
   languageName: unknown
   linkType: soft
 
