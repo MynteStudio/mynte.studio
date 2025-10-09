@@ -4,6 +4,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "start:app": "yarn workspace @mynte/site dev",
+    "start:design": "yarn workspace @mynte/design-system storybook",
     "docker:up": "docker compose up -d",
     "docker:down": "docker compose down",
     "lint": "eslint .",
@@ -21,7 +22,7 @@
   },
   "prettier": "@julr/tooling-configs/prettier",
   "volta": {
-    "node": "22.11.0"
+    "node": "22.20.0"
   },
   "packageManager": "yarn@4.10.3"
 }
