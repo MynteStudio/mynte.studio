@@ -10,6 +10,10 @@
     "storybook": "storybook dev -p 6006 --no-open",
     "build-storybook": "storybook build"
   },
+  "exports": {
+    "./fonts": "./src/css/fonts.css",
+    "./reset": "./src/css/reset.css"
+  },
   "dependencies": {
     "@inertiajs/react": "^2.2.7",
     "react": "^19.1.1",

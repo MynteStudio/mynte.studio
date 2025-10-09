@@ -1,7 +1,8 @@
 /// <reference path="../../adonisrc.ts" />
 /// <reference path="../../config/inertia.ts" />
 
-import '../css/reset.css'
+import '@mynte/design-system/reset'
+import '@mynte/design-system/fonts'
 import 'virtual:uno.css'
 import { resolvePageComponent } from '@adonisjs/inertia/helpers'
 import { createInertiaApp } from '@inertiajs/react'

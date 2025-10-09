@@ -19,7 +19,7 @@ body {
 }
 
 body {
-  @apply font-sans bg-off-white;
+  @apply font-sans bg-[#080808];
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
