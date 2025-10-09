@@ -1,13 +1,14 @@
-import { Cta, CtaType } from './cta'
+import { Cta, CtaVariant } from './cta'
 import type { Meta, StoryObj } from '@storybook/react-vite'
+import type { ComponentProps } from 'react'
 
 const meta = {
   title: 'Atoms/CTA',
   component: Cta,
   argTypes: {
-    type: {
+    variant: {
       control: 'select',
-      options: CtaType,
+      options: CtaVariant,
     },
   },
 } satisfies Meta<typeof Cta>
@@ -18,13 +19,17 @@ type Story = StoryObj<typeof meta>
 
 export const Base: Story = {
   args: {
-    type: 'primary',
+    variant: 'primary',
     children: 'book a call',
+    href: 'example',
   },
   render: (args) => {
+    const { variant, children, href } = args as ComponentProps<typeof Cta> & {
+      href: string
+    }
     return (
-      <Cta as="button" type={args.type}>
-        {args.children}
+      <Cta as="a" href={href} variant={variant}>
+        {children}
       </Cta>
     )
   },
