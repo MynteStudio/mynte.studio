@@ -8,7 +8,7 @@ export const DynamicIsland = () => {
   return (
     <>
       <div className="glass h-10 w-full flex items-center justify-between rounded-3xl">
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-3">
           <div className="ml-4">
             <Available />
           </div>
