@@ -1,3 +1,5 @@
+import '../src/css/reset.css'
+import 'virtual:uno.css'
 import type { Preview } from '@storybook/react-vite'
 
 const preview: Preview = {
