@@ -15,6 +15,7 @@
     "./reset": "./src/css/reset.css"
   },
   "dependencies": {
+    "@ark-ui/react": "^5.26.0",
     "@inertiajs/react": "^2.2.7",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
