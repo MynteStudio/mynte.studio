@@ -34,11 +34,12 @@ export const Field = ({
   const invalid = typeof errorMessage !== 'undefined'
   const FieldComponent = type === 'textarea' ? FieldTextarea : FieldInput
   return (
-    <FieldRoot invalid={invalid} className={`${styles.root} relative`}>
+    <FieldRoot invalid={invalid} className={`${styles.root} relative w-full`}>
       <FieldComponent
         {...rest}
         value={value}
         onChange={onChange}
+        required={required}
         type={type !== 'textarea' ? type : undefined}
         rows={type === 'textarea' ? rows : undefined}
         className="relative placeholder-[#636363] bg-gradient-to-b from-[#303030] to-[rgba(48,48,48,0.7)] focus:glass focus:border-none flex w-full py-2 px-5 rounded-3xl outline-none"
