@@ -6,7 +6,7 @@ import { ExternalLinks } from '../../molecules/external-links/external_links'
 export const Header = () => {
   return (
     <>
-      <header className="z-99 px-5 py-5 lg:py-9 gap-5 grid grid-cols-4 items-center fixed container top-0 left-0 right-0 mx-auto text-sm">
+      <header className="z-99 px-5 py-5 lg:py-9 gap-5 grid grid-cols-2 md:grid-cols-4 items-center fixed container top-0 left-0 right-0 mx-auto text-sm">
         <div className="col-start-1 col-end-2 lg:col-end-1">
           <Logo />
         </div>
