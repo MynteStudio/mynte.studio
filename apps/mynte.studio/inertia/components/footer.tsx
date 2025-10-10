@@ -1,6 +1,7 @@
 import { Link } from '@inertiajs/react'
 import { Logo } from '@mynte/design-system/logo'
 import styles from '~/components/css/footer.module.css'
+import { CopyrightIcon } from '~/components/svg/copyright_icon'
 import { tuyau } from '~/core/providers/tuyau'
 
 export const Footer = () => {
@@ -62,8 +63,7 @@ export const Footer = () => {
         </Link>
 
         <span className="flex gap-2 items-center">
-          {/* TODO: */}
-          {/* <CopyrightIcon /> */}
+          <CopyrightIcon />
           MYNTE STUDIO 2025
         </span>
 
