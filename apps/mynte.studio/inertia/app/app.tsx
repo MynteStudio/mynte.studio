@@ -7,14 +7,21 @@ import 'virtual:uno.css'
 import { resolvePageComponent } from '@adonisjs/inertia/helpers'
 import { createInertiaApp } from '@inertiajs/react'
 import { hydrateRoot } from 'react-dom/client'
+import { AppLayout } from '~/components/layouts/app_layout'
 
 createInertiaApp({
   progress: { color: '#ffffff' },
 
   title: (title) => `${title} - Mynte Studio`,
 
-  resolve: (name) => {
-    return resolvePageComponent(`../pages/${name}.tsx`, import.meta.glob('../pages/**/*.tsx'))
+  resolve: async (name) => {
+    const page = await resolvePageComponent(
+      `../pages/${name}.tsx`,
+      import.meta.glob('../pages/**/*.tsx'),
+    )
+    page.default.layout = page.default.layout || ((page) => <AppLayout children={page} />)
+
+    return page
   },
 
   setup({ el, App, props }) {
