@@ -6,7 +6,9 @@ export const Hero = () => {
     <section className="min-h-screen mx-5 flex flex-col items-center justify-around">
       <div className="flex flex-col items-center">
         <h1 className="text-principal font-semibold text-center max-w-[20ch] line-height-[120%]">
-          <span className="font-serif italic mr-3 md:mr-5 font-normal">Refreshing</span>
+          <span className="font-serif italic mr-3 md:mr-5 font-normal mix-blend-difference">
+            Refreshing
+          </span>
           Digital experiences with creative design for every brand
         </h1>
 
