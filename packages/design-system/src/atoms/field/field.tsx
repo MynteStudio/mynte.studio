@@ -42,7 +42,7 @@ export const Field = ({
         required={required}
         type={type !== 'textarea' ? type : undefined}
         rows={type === 'textarea' ? rows : undefined}
-        className="relative placeholder-[#636363] bg-gradient-to-b from-[#303030] to-[rgba(48,48,48,0.7)] focus:glass focus:border-none flex w-full py-2 px-5 rounded-3xl outline-none"
+        className="relative placeholder-[#939393] bg-gradient-to-b from-[#303030] to-[rgba(48,48,48,0.7)] focus:glass focus:border-none flex w-full py-2 px-5 rounded-3xl outline-none"
         placeholder={label + (required ? '*' : '')}
       />
 
