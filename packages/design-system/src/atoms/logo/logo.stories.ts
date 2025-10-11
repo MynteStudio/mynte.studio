@@ -15,3 +15,8 @@ export const Base: Story = {
     size: 'default',
   },
 }
+export const Small: Story = {
+  args: {
+    size: 'small',
+  },
+}

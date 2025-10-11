@@ -17,18 +17,30 @@ export default meta
 
 type Story = StoryObj<typeof meta>
 
-export const Base: Story = {
+export const Primary: Story = {
   args: {
     variant: 'primary',
     children: 'book a call',
-    href: 'example',
   },
   render: (args) => {
-    const { variant, children, href } = args as ComponentProps<typeof Cta> & {
-      href: string
-    }
+    const { variant, children } = args as ComponentProps<typeof Cta>
     return (
-      <Cta as="a" href={href} variant={variant}>
+      <Cta as="button" variant={variant}>
+        {children}
+      </Cta>
+    )
+  },
+}
+
+export const Secondary: Story = {
+  args: {
+    variant: 'secondary',
+    children: 'visit our blog',
+  },
+  render: (args) => {
+    const { variant, children } = args as ComponentProps<typeof Cta>
+    return (
+      <Cta as="button" variant={variant}>
         {children}
       </Cta>
     )
