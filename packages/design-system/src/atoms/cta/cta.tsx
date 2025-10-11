@@ -4,7 +4,7 @@ import styles from './cta.module.css'
 import type { AnchorHTMLAttributes, ButtonHTMLAttributes } from 'react'
 
 const ctaStyles = tv({
-  base: 'flex justify-center items-center w-[152px] h-[40px] cursor-pointer text-lg rounded-full font-semibold transition-all duration-300 ease-out',
+  base: 'flex justify-center items-center min-w-[9.5rem] h-[2.5rem] px-5 cursor-pointer text-lg rounded-full font-semibold transition-all duration-300 ease-out',
   variants: {
     variant: {
       primary:
