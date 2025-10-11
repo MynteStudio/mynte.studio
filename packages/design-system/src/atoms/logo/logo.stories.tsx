@@ -20,3 +20,15 @@ export const Small: Story = {
     size: 'small',
   },
 }
+
+export const AllVariants: Story = {
+  argTypes: {
+    size: { table: { disable: true } },
+  },
+  render: () => (
+    <div className="flex gap-4 items-center">
+      <Logo />
+      <Logo size="small" />
+    </div>
+  ),
+}

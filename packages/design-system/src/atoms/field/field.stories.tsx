@@ -52,3 +52,28 @@ export const TextArea: Story = {
     rows: 5,
   },
 }
+
+export const AllVariants: Story = {
+  argTypes: {
+    type: { table: { disable: true } },
+    errorMessage: { table: { disable: true } },
+    value: { table: { disable: true } },
+    required: { table: { disable: true } },
+    rows: { table: { disable: true } },
+  },
+  args: {
+    label: 'Your message',
+  },
+  render: (args) => (
+    <>
+      <div className="flex flex-col gap-15">
+        <div className="flex gap-4">
+          <Field label={args.label} />
+          <Field label={args.label} required />
+          <Field label={args.label} errorMessage="This field is required" />
+        </div>
+        <Field label={args.label} type="textarea" rows={5} />
+      </div>
+    </>
+  ),
+}

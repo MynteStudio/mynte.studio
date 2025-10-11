@@ -21,3 +21,16 @@ export const Base: Story = {
     name: 'behance',
   },
 }
+
+export const AllVariants: Story = {
+  args: {
+    name: 'behance',
+  },
+  render: () => (
+    <div className="flex gap-4">
+      {IconName.map((name, _) => (
+        <Icon name={name} />
+      ))}
+    </div>
+  ),
+}

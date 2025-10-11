@@ -46,3 +46,22 @@ export const Secondary: Story = {
     )
   },
 }
+
+export const AllVariants: Story = {
+  args: {
+    children: 'book a call',
+  },
+  argTypes: {
+    variant: { table: { disable: true } },
+  },
+  render: (args) => (
+    <div className="flex gap-4">
+      <Cta as="button" variant="primary">
+        {args.children}
+      </Cta>
+      <Cta as="button" variant="secondary">
+        {args.children}
+      </Cta>
+    </div>
+  ),
+}
