@@ -1,0 +1,8 @@
+import { useTranslation as useI18nextTranslation } from 'react-i18next'
+
+export const useTranslation = () => {
+  const { t, i18n } = useI18nextTranslation()
+  const dir = i18n.dir()
+
+  return { t, i18n, dir }
+}

@@ -1,1 +1,11 @@
-{}
+{
+  "book_a_call": "Book a call",
+  "send_a_message": "Send a message",
+  "write_us": "Write us",
+
+  "header": {
+    "available_now": "available right now for your project :)",
+    "close": "Close",
+    "contact": "Contact"
+  }
+}

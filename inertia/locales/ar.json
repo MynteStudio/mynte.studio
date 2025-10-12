@@ -1,1 +1,11 @@
-{}
+{
+  "book_a_call": "احجز مكالمة",
+  "send_a_message": "أرسل رسالة",
+  "write_us": "راسلنا",
+
+  "header": {
+    "available_now": "متاح الآن لمشروعك :)",
+    "close": "إغلاق",
+    "contact": "اتصل بنا"
+  }
+}

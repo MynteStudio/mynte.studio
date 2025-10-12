@@ -3,6 +3,7 @@ import { createInertiaApp } from '@inertiajs/react'
 import i18next from 'i18next'
 import ReactDOMServer from 'react-dom/server'
 import { I18nextProvider } from 'react-i18next'
+import { AppLayout } from '~/components/layouts/app_layout'
 
 export default async function render(page: any) {
   const locale = page.props.locale as string
@@ -13,7 +14,11 @@ export default async function render(page: any) {
     render: ReactDOMServer.renderToString,
     resolve: (name) => {
       const pages = import.meta.glob('../pages/**/*.tsx', { eager: true })
-      return pages[`../pages/${name}.tsx`]
+      const page = pages[`../pages/${name}.tsx`]
+
+      page.default.layout = page.default.layout || ((page) => <AppLayout children={page} />)
+
+      return page
     },
     setup: ({ App, props }) => (
       <I18nextProvider i18n={i18next}>
