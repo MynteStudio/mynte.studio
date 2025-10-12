@@ -4,7 +4,10 @@ import i18next from 'i18next'
 import ReactDOMServer from 'react-dom/server'
 import { I18nextProvider } from 'react-i18next'
 
-export default function render(page: any) {
+export default async function render(page: any) {
+  const locale = page.props.locale as string
+  await i18next.changeLanguage(locale)
+
   return createInertiaApp({
     page,
     render: ReactDOMServer.renderToString,

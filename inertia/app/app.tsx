@@ -20,6 +20,9 @@ createInertiaApp({
   },
 
   setup({ el, App, props }) {
+    const locale = props.initialPage.props.locale as string
+    i18next.changeLanguage(locale)
+
     hydrateRoot(
       el,
       <I18nextProvider i18n={i18next}>
