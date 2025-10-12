@@ -2,6 +2,7 @@
 /// <reference path="../../config/inertia.ts" />
 
 import '../css/reset.css'
+import '../css/fonts.css'
 import 'virtual:uno.css'
 import './i18n'
 import { hydrateRoot } from 'react-dom/client'
