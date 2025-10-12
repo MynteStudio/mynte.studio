@@ -69,8 +69,10 @@
     "@tuyau/core": "^0.4.2",
     "@vinejs/vine": "^3.0.1",
     "edge.js": "^6.2.1",
+    "i18next": "^25.6.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-i18next": "^16.0.0",
     "reflect-metadata": "^0.2.2"
   },
   "hotHook": {
