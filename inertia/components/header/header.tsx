@@ -1,6 +1,6 @@
 import { Link } from '@inertiajs/react'
 import Cookies from 'js-cookie'
-import { useTranslation } from '~/hooks/useTranslation'
+import { useTranslation } from '~/hooks/use_translation'
 import { Logo } from '~/components/svgs/logo'
 import { tuyau } from '~/core/providers/tuyau'
 import { DynamicIsland } from '~/components/header/dynamic_island'

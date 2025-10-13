@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styles from './dynamic_island.module.css'
-import { useTranslation } from '~/hooks/useTranslation'
+import { useTranslation } from '~/hooks/use_translation'
 import { DynamicIslandModal } from './dynamic_island_modal'
 
 export const DynamicIsland = () => {

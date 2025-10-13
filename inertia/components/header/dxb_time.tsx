@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { useTranslation } from '~/hooks/useTranslation'
+import { useTranslation } from '~/hooks/use_translation'
 
 const toArabicNumerals = (num: string) => {
   const arabicNumerals = ['٠', '١', '٢', '٣', '٤', '٥', '٦', '٧', '٨', '٩']

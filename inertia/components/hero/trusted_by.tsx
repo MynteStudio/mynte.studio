@@ -4,7 +4,7 @@ import { PicassoLogo } from '~/components/svgs/picasso_logo'
 import { RoshniTechnologiesLogo } from '~/components/svgs/roshni_technologies_logo'
 import { SolarTerraLogo } from '~/components/svgs/solar_terra_logo'
 import styles from './trusted_by.module.css'
-import { useTranslation } from '~/hooks/useTranslation'
+import { useTranslation } from '~/hooks/use_translation'
 
 export const TrustedBy = () => {
   const { t } = useTranslation()

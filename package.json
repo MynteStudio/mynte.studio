@@ -46,6 +46,7 @@
     "@types/node": "^22.15.18",
     "@types/react": "^19.2.2",
     "@types/react-dom": "^19.2.1",
+    "@types/three": "^0.180.0",
     "@vitejs/plugin-react": "^5.0.4",
     "eslint": "^9.26.0",
     "hot-hook": "^0.4.0",
@@ -69,6 +70,8 @@
     "@adonisjs/static": "^1.1.1",
     "@adonisjs/vite": "^4.0.0",
     "@inertiajs/react": "^2.2.8",
+    "@react-three/drei": "^10.7.6",
+    "@react-three/fiber": "^9.4.0",
     "@tuyau/client": "^0.2.10",
     "@tuyau/core": "^0.4.2",
     "@vinejs/vine": "^3.0.1",
@@ -78,7 +81,8 @@
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
     "react-i18next": "^16.0.0",
-    "reflect-metadata": "^0.2.2"
+    "reflect-metadata": "^0.2.2",
+    "three": "^0.180.0"
   },
   "hotHook": {
     "boundaries": [

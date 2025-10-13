@@ -1,4 +1,4 @@
-import { useTranslation } from '~/hooks/useTranslation'
+import { useTranslation } from '~/hooks/use_translation'
 import styles from './dynamic_island_modal.module.css'
 import { Icon } from '~/components/icon'
 

@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { useTranslation } from '~/hooks/useTranslation'
+import { useTranslation } from '~/hooks/use_translation'
 import { ExternalLinksIcon } from '~/components/svgs/external_links_icon'
 import { ExternalLinksModal } from '~/components/header/external_links_modal'
 
