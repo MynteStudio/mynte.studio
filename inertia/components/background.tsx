@@ -10,6 +10,7 @@ export const Background = () => {
         height: '100vh',
         zIndex: -2,
       }}
+      data-scroll
     >
       <TCanvas />
     </div>

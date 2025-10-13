@@ -1,4 +1,5 @@
 import { Head } from '@inertiajs/react'
+import { Expertise } from '~/components/expertise/expertise'
 import { Hero } from '~/components/hero/hero'
 
 export default function Home() {
@@ -7,6 +8,9 @@ export default function Home() {
       <Head title="Homepage" />
 
       <Hero />
+      <Expertise />
+
+      <div className="flex py-300"></div>
     </>
   )
 }
