@@ -3,11 +3,21 @@
   "information": "Information",
   "send_a_message": "Send a message",
   "temporary_website": "You're browsing on our temporary website! We're currently working on the new version.",
+  "visit_our_blog": "Visir our blog",
   "write_us": "Write us",
 
   "header": {
     "available_now": "available right now for your project :)",
     "close": "Close",
     "contact": "Contact"
+  },
+
+  "home": {
+    "hero": {
+      "keyword": "Refreshing",
+      "title": "Digital experiences with creative design for every brand",
+      "text": "Websites, apps, e-commerce, graphic identities, graphic design, and advertising ; all crafted for a distinct digital presence",
+      "trusted_by": "trusted by 10+ companies"
+    }
   }
 }

@@ -12,9 +12,9 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
 
   return (
     <>
-      <div dir={dir} className="container px-5 min-h-screen mx-auto">
+      <div dir={dir} className="container px-5 min-h-auto mx-auto">
         <Header />
-        <div className="mt-[7.125rem]">
+        <div className="pt-[7.125rem]">
           <Information type={t('information')} message={t('temporary_website')} />
         </div>
         <main>{children}</main>

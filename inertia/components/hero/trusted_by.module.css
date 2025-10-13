@@ -1,0 +1,117 @@
+.container {
+  @apply relative;
+  overflow: hidden;
+  height: 100px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.container::before,
+.container::after {
+  @apply w-[80px] sm:w-[200px];
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.container::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(8, 8, 8, 0.6) 0%,
+    rgba(8, 8, 8, 0.4) 50%,
+    rgba(8, 8, 8, 0.2) 75%,
+    transparent 100%
+  );
+}
+
+.container::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    rgba(8, 8, 8, 0.6) 0%,
+    rgba(8, 8, 8, 0.4) 50%,
+    rgba(8, 8, 8, 0.2) 75%,
+    transparent 100%
+  );
+}
+
+@media (min-width: 640px) {
+  .container::before {
+    background: linear-gradient(
+      to right,
+      #080808 0%,
+      #080808 50%,
+      rgba(8, 8, 8, 0.8) 70%,
+      rgba(8, 8, 8, 0.4) 85%,
+      transparent 100%
+    );
+  }
+
+  .container::after {
+    background: linear-gradient(
+      to left,
+      #080808 0%,
+      #080808 50%,
+      rgba(8, 8, 8, 0.8) 70%,
+      rgba(8, 8, 8, 0.4) 85%,
+      transparent 100%
+    );
+  }
+}
+
+.container > div {
+  @apply absolute flex items-center gap-10;
+}
+
+.container > div svg {
+  width: auto;
+  height: auto;
+  max-width: none;
+  flex-shrink: 0;
+  min-width: 100px;
+  transform: scale(0.7);
+}
+
+.container > div:first-of-type {
+  left: 0;
+  animation:
+    translate 11250ms linear,
+    infiniteTranslate2 23625ms 11250ms linear infinite;
+}
+
+.container > div:last-of-type {
+  left: 0;
+  transform: translate3d(110%, 0, 0);
+  animation: infiniteTranslate1 23625ms 100ms linear infinite;
+}
+
+@keyframes infiniteTranslate1 {
+  from {
+    transform: translate3d(110%, 0, 0);
+  }
+  to {
+    transform: translate3d(-100%, 0, 0);
+  }
+}
+
+@keyframes infiniteTranslate2 {
+  from {
+    transform: translate3d(117%, 0, 0);
+  }
+  to {
+    transform: translate3d(-93%, 0, 0);
+  }
+}
+
+@keyframes translate {
+  from {
+    transform: translate3d(6%, 0, 0);
+  }
+  to {
+    transform: translate3d(-94%, 0, 0);
+  }
+}
