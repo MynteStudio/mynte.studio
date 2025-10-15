@@ -25,6 +25,8 @@ export const SmoothScrollWrapper = ({ children }: SmoothScrollWrapperProps) => {
   useEffect(() => {
     if (!isClient || !scrollRef.current) return
 
+    let resizeObserver: ResizeObserver
+
     // Import dynamique de Locomotive Scroll côté client uniquement
     import('locomotive-scroll').then((LocomotiveScrollModule) => {
       import('locomotive-scroll/dist/locomotive-scroll.css')
@@ -45,9 +47,21 @@ export const SmoothScrollWrapper = ({ children }: SmoothScrollWrapperProps) => {
       setTimeout(() => {
         locomotiveScrollRef.current?.update()
       }, 100)
+
+      // ResizeObserver pour gérer les changements de taille
+      resizeObserver = new ResizeObserver(() => {
+        locomotiveScrollRef.current?.update()
+      })
+
+      if (scrollRef.current) {
+        resizeObserver.observe(scrollRef.current)
+      }
     })
 
     return () => {
+      if (resizeObserver) {
+        resizeObserver.disconnect()
+      }
       locomotiveScrollRef.current?.destroy()
     }
   }, [isClient])

@@ -15,7 +15,7 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
   return (
     <>
       <SmoothScrollWrapper>
-        <Background />
+        {/* <Background /> */}
         <div dir={dir} className="container px-5 min-h-auto mx-auto">
           <Header />
           <div className="pt-[7.125rem]" data-scroll-section>

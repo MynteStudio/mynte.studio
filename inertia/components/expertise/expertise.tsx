@@ -21,39 +21,36 @@ function shuffleTags(tags: string[]) {
 }
 
 export const Expertise = () => {
-  const [activeIndex, setActiveIndex] = useState(0)
-  const sectionRef = useRef<HTMLElement>(null)
+  const [activeIndex, setActiveIndex] = useState(-1)
   const { scroll } = useLocomotiveScroll()
 
-  const shuffledTags = useMemo(() => {
+  const [shuffledTags, setShuffledTags] = useState(() => {
     const allTags = [...briefingTags, ...designTags, ...devTags, ...marketingTags]
-    return shuffleTags(allTags)
+    return allTags
+  })
+
+  useEffect(() => {
+    const allTags = [...briefingTags, ...designTags, ...devTags, ...marketingTags]
+    setShuffledTags(shuffleTags(allTags))
   }, [])
 
   useEffect(() => {
     if (!scroll) return
 
     const handleScroll = (args: any) => {
-      if (!sectionRef.current) return
+      if (typeof args.currentElements['expertise-section'] === 'object') {
+        const progress = args.currentElements['expertise-section'].progress
 
-      const section = sectionRef.current
-      const rect = section.getBoundingClientRect()
-      const windowHeight = window.innerHeight
-      const sectionHeight = section.offsetHeight
-
-      const scrollStart = rect.top - windowHeight / 2
-      const scrollEnd = rect.bottom - windowHeight / 2
-      const scrollRange = sectionHeight - windowHeight / 2
-
-      if (scrollStart > 0) {
+        if (progress === 0) {
+          setActiveIndex(-1)
+        } else if (progress >= 1) {
+          setActiveIndex(4)
+        } else {
+          const index = Math.min(3, Math.floor(progress * 4))
+          setActiveIndex(index)
+        }
+      } else {
         setActiveIndex(-1)
-      } else if (scrollEnd < 0) {
-        setActiveIndex(4)
-      } else if (scrollEnd > 0 && scrollStart < 0) {
-        const offset = windowHeight * 0.6
-        const progress = Math.max(0, Math.min(1, (-scrollStart - offset) / scrollRange))
-        const newIndex = Math.min(3, Math.floor(progress * 3.99))
-        setActiveIndex(newIndex)
       }
     }
 
@@ -68,13 +65,14 @@ export const Expertise = () => {
 
   return (
     <section
-      ref={sectionRef}
       id="expertise-section"
-      className="mt-40 lg:min-h-[200vh] relative"
+      className="mt-40 min-h-[300vh] relative"
       data-scroll-section
+      data-scroll
+      data-scroll-id="expertise-section"
     >
       {/* NOTE: mobile */}
-      <div className="lg:hidden">
+      <div className="xl:hidden absolute top-0 left-0 right-0">
         <SectionTitle>our process and expertise</SectionTitle>
 
         <div className="mt-20 flex flex-col gap-10 items-start">
@@ -98,7 +96,7 @@ export const Expertise = () => {
 
       {/* NOTE: desktop */}
       <div
-        className="hidden lg:block relative top-[30vh]"
+        className="hidden xl:block absolute top-[30vh] left-0 right-0"
         data-scroll
         data-scroll-sticky
         data-scroll-target="#expertise-section"
@@ -106,7 +104,7 @@ export const Expertise = () => {
         <SectionTitle>our process and expertise</SectionTitle>
 
         <div className="mt-20 flex flex-nowrap">
-          <aside className="w-1/2 flex flex-col gap-8">
+          <aside className="w-1/2 flex flex-col gap-15">
             {expertiseData.map((item, index) => (
               <h3
                 key={index}
@@ -114,7 +112,7 @@ export const Expertise = () => {
                   activeIndex === -1 || activeIndex === 4
                     ? 'opacity-30 text-4xl'
                     : activeIndex === index
-                      ? 'opacity-100 font-semibold text-4xl'
+                      ? 'opacity-100 text-4xl'
                       : 'opacity-40 text-4xl'
                 }`}
                 data-scroll

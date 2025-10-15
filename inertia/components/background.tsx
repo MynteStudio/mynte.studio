@@ -9,8 +9,8 @@ export const Background = () => {
         width: '100vw',
         height: '100vh',
         zIndex: -2,
+        pointerEvents: 'none',
       }}
-      data-scroll
     >
       <TCanvas />
     </div>

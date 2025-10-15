@@ -1,7 +1,7 @@
 import { useState } from 'react'
-import styles from './dynamic_island.module.css'
 import { useTranslation } from '~/hooks/use_translation'
 import { DynamicIslandModal } from './dynamic_island_modal'
+import { AvailabilityStatus } from '~/components/availability_status'
 
 export const DynamicIsland = () => {
   const { t } = useTranslation()
@@ -13,9 +13,7 @@ export const DynamicIsland = () => {
         {/* NOTE: available */}
         <div className="flex items-center gap-3">
           <div className="ml-4">
-            <div
-              className={`${styles.root} rounded-full bg-[#84cc16] h-[0.56rem] w-[0.56rem]`}
-            ></div>
+            <AvailabilityStatus color="green" />
           </div>
           <span>{t('header.available_now')}</span>
         </div>
