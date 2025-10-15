@@ -108,7 +108,7 @@ export const Expertise = () => {
             {expertiseData.map((item, index) => (
               <h3
                 key={index}
-                className={`font-serif font-normal italic transition-all duration-500 ease-out ${
+                className={`font-serif font-normal italic transition-all duration-500 ease-out max-w-[25ch] ${
                   activeIndex === -1 || activeIndex === 4
                     ? 'opacity-30 text-4xl'
                     : activeIndex === index

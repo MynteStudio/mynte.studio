@@ -4,6 +4,8 @@ import { Information } from '~/components/information'
 import { ReactNode } from 'react'
 import { Background } from '~/components/background'
 import { SmoothScrollWrapper } from '~/components/smooth_scroll_wrapper'
+import { Footer } from '../footer'
+import { DynamicIslandProvider } from '~/hooks/use_dynamic_island_visibility'
 
 interface AppLayoutProps {
   children: ReactNode
@@ -14,16 +16,21 @@ export const AppLayout = ({ children }: AppLayoutProps) => {
 
   return (
     <>
-      <SmoothScrollWrapper>
-        {/* <Background /> */}
-        <div dir={dir} className="container px-5 min-h-auto mx-auto">
-          <Header />
-          <div className="pt-[7.125rem]" data-scroll-section>
-            <Information type={t('information')} message={t('temporary_website')} />
+      <DynamicIslandProvider>
+        <SmoothScrollWrapper>
+          <Background />
+          <div dir={dir} className="container px-5 min-h-auto mx-auto relative">
+            <Header />
+            <div className="flex flex-col items-end text-sm absolute right-5 top-30">
+              <a href="">AGENCY</a>
+              <a href="">WORKS</a>
+              <a href="">CONTACT</a>
+            </div>
+            <main>{children}</main>
+            <Footer />
           </div>
-          <main>{children}</main>
-        </div>
-      </SmoothScrollWrapper>
+        </SmoothScrollWrapper>
+      </DynamicIslandProvider>
     </>
   )
 }

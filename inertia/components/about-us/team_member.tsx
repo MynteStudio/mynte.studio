@@ -68,10 +68,12 @@ export const TeamMember = ({
           <p className="font-light mt-[0.15rem]">{description}</p>
 
           <div className="flex justify-center gap-3 mt-2">
-            {links.map((link, index) => (
+            {links.map((link) => (
               <a
                 key={link.label}
                 href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="glass rounded-full px-5 text-sm font-normal"
               >
                 {link.label}
