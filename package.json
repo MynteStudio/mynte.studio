@@ -43,6 +43,7 @@
     "@japa/runner": "^4.2.0",
     "@swc/core": "1.11.24",
     "@types/node": "^22.15.18",
+    "@types/three": "^0.180.0",
     "@vitejs/plugin-vue": "^6.0.1",
     "eslint": "^9.26.0",
     "hot-hook": "^0.4.0",
@@ -71,6 +72,7 @@
     "@vueuse/integrations": "^13.9.0",
     "edge.js": "^6.2.1",
     "reflect-metadata": "^0.2.2",
+    "three": "^0.180.0",
     "universal-cookie": "^8.0.1",
     "vue": "^3.5.22",
     "vue-i18n": "^11.1.12"
