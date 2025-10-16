@@ -37,6 +37,7 @@
     "@adonisjs/eslint-config": "^2.0.0",
     "@adonisjs/prettier-config": "^1.4.4",
     "@adonisjs/tsconfig": "^1.4.0",
+    "@intlify/unplugin-vue-i18n": "^11.0.1",
     "@japa/assert": "^4.0.1",
     "@japa/plugin-adonisjs": "^4.0.0",
     "@japa/runner": "^4.2.0",
@@ -67,7 +68,8 @@
     "@vue/server-renderer": "^3.5.22",
     "edge.js": "^6.2.1",
     "reflect-metadata": "^0.2.2",
-    "vue": "^3.5.22"
+    "vue": "^3.5.22",
+    "vue-i18n": "^11.1.12"
   },
   "hotHook": {
     "boundaries": [

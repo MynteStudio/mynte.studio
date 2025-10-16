@@ -4,11 +4,16 @@ import Inertia from '@adonisjs/inertia/client'
 import Vue from '@vitejs/plugin-vue'
 import Adonisjs from '@adonisjs/vite/client'
 import UnoCSS from 'unocss/vite'
+import VueI18nPlugin from '@intlify/unplugin-vue-i18n/vite'
+import path from 'node:path'
 
 export default defineConfig({
   plugins: [
     Inertia({ ssr: { enabled: true, entrypoint: 'inertia/app/ssr.ts' } }),
     Vue(),
+    VueI18nPlugin({
+      include: path.resolve(__dirname, 'inertia/locales/**'),
+    }),
     Adonisjs({ entrypoints: ['inertia/app/app.ts'], reload: ['resources/views/**/*.edge'] }),
     UnoCSS(),
   ],
