@@ -8,17 +8,21 @@ import type { DefineComponent } from 'vue'
 import { createInertiaApp } from '@inertiajs/vue3'
 import { resolvePageComponent } from '@adonisjs/inertia/helpers'
 import { i18n } from './i18n'
+import AppLayout from '~/components/layouts/app_layout.vue'
 
 createInertiaApp({
   progress: { color: '#ffffff' },
 
   title: (title) => `${title} - Mynte Studio`,
 
-  resolve: (name) => {
-    return resolvePageComponent(
+  resolve: async (name) => {
+    const page = await resolvePageComponent(
       `../pages/${name}.vue`,
       import.meta.glob<DefineComponent>('../pages/**/*.vue')
     )
+    page.default.layout = page.default.layout || AppLayout
+
+    return page
   },
 
   setup({ el, App, props, plugin }) {
