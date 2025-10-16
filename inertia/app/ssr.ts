@@ -13,6 +13,9 @@ export default function render(page: any) {
     },
 
     setup({ App, props, plugin }) {
+      const locale = props.initialPage.props.locale as 'en' | 'ar'
+      i18n.global.locale.value = locale
+
       return createSSRApp({ render: () => h(App, props) })
         .use(plugin)
         .use(i18n)
