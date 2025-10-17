@@ -20,9 +20,40 @@ body {
 }
 
 body {
-  @apply font-sans bg-[#080808];
+  @apply bg-[#080808];
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
+}
+
+[dir='rtl'] p:not(.font-en):not(.font-en-serif):not(.font-ar-serif),
+[dir='rtl'] span:not(.font-en):not(.font-en-serif):not(.font-ar-serif),
+[dir='rtl'] a:not(.font-en):not(.font-en-serif):not(.font-ar-serif),
+[dir='rtl'] button:not(.font-en):not(.font-en-serif):not(.font-ar-serif),
+[dir='rtl'] h3:not(.font-en):not(.font-en-serif):not(.font-ar-serif),
+[dir='rtl'] input::placeholder,
+[dir='rtl'] textarea::placeholder {
+  font-family: Honor, sans-serif !important;
+}
+
+[dir='rtl'] h1:not(.font-en),
+[dir='rtl'] h2:not(.font-en) {
+  font-family: Saudi, sans-serif !important;
+}
+
+.font-ar {
+  font-family: Honor, sans-serif !important;
+}
+
+.font-ar-serif {
+  font-family: Saudi, serif !important;
+}
+
+.font-en {
+  font-family: MynteFont, sans-serif !important;
+}
+
+.font-en-serif {
+  font-family: 'Instrument Serif', serif !important;
 }
 
 img,

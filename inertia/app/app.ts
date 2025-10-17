@@ -2,6 +2,7 @@
 /// <reference path="../../config/inertia.ts" />
 
 import '../css/reset.css'
+import '../css/fonts.css'
 import 'virtual:uno.css'
 import { createSSRApp, h } from 'vue'
 import type { DefineComponent } from 'vue'
