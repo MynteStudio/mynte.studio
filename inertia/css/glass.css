@@ -1,0 +1,45 @@
+.glass {
+  position: relative;
+  border-radius: 50px;
+
+  /* Background: #F1EDEE 2% */
+  background-color: rgba(241, 237, 238, 0.02);
+
+  /* Shadows: drop shadow + inner shadows */
+  box-shadow:
+    0 4px 21.4px 0 rgba(0, 0, 0, 0.25),
+    inset -1px 12px 23.7px 0 rgba(255, 255, 255, 0.01),
+    inset 6px -8px 13.2px 0 rgba(255, 255, 255, 0.23);
+
+  /* Background blur: uniform 7.5 */
+  backdrop-filter: blur(7.5px);
+  -webkit-backdrop-filter: blur(7.5px);
+
+  /* Transition */
+  transition: all 0.5s ease-out;
+}
+
+/* Border gradient with border-radius support - centered (using inset) */
+.glass::before {
+  content: '';
+  position: absolute;
+  inset: -0.5px; /* Center the 1px border (half inside, half outside) */
+  border-radius: 50px;
+  padding: 1px; /* Border width */
+  background: conic-gradient(
+    from 0deg,
+    rgba(255, 255, 255, 0.62) 0%,
+    rgba(0, 0, 0, 1) 32%,
+    rgba(0, 0, 0, 1) 54%,
+    rgba(255, 255, 255, 0.64) 100%
+  );
+  -webkit-mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+}

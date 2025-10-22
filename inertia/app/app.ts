@@ -3,6 +3,7 @@
 
 import '../css/reset.css'
 import '../css/fonts.css'
+import '../css/glass.css'
 import 'virtual:uno.css'
 import { createSSRApp, h } from 'vue'
 import type { DefineComponent } from 'vue'

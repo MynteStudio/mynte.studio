@@ -98,8 +98,4 @@ onMounted(() => {
   <div class="absolute inset-0 w-screen h-screen z-[-2] pointer-events-none">
     <canvas ref="canvasRef"></canvas>
   </div>
-
-  <div
-    class="absolute h-24 z-[-1] left-0 bottom-0 right-0 bg-gradient-to-t from-[#080808] to-transparent"
-  ></div>
 </template>

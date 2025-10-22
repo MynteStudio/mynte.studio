@@ -1,14 +1,14 @@
 <script setup lang="ts">
 import { useI18nExtended } from '~/composables/use_i18n_extended'
 import Background from '~/components/hero/background.vue'
-import TrustedBy from '../header/trusted_by.vue'
+import TrustedBy from '~/components/header/trusted_by.vue'
 
 const { arabic, t } = useI18nExtended()
 </script>
 
 <template>
-  <Background />
-  <div class="min-h-[calc(100vh_-_6.25rem)] flex flex-col justify-between items-center">
+  <!-- <Background /> -->
+  <div class="relative min-h-[calc(100vh_-_6.25rem)] flex flex-col justify-between items-center">
     <div></div>
     <div class="flex flex-col items-center">
       <h1
@@ -30,6 +30,10 @@ const { arabic, t } = useI18nExtended()
     </div>
 
     <TrustedBy />
+
+    <div
+      class="absolute h-24 z-[-1] bottom-0 w-screen left-1/2 -translate-x-1/2 bg-gradient-to-t from-[#080808] to-transparent pointer-events-none"
+    ></div>
   </div>
 </template>
 

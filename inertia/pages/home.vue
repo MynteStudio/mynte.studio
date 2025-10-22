@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { Head } from '@inertiajs/vue3'
+import Expertise from '~/app/expertise/expertise.vue'
 import Hero from '~/components/hero/hero.vue'
 </script>
 
@@ -7,4 +8,5 @@ import Hero from '~/components/hero/hero.vue'
   <Head title="Homepage" />
 
   <Hero />
+  <Expertise />
 </template>
