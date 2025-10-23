@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { provide } from 'vue'
 import Header from '~/components/header/header.vue'
+import Footer from '~/components/footer.vue'
 import { useLenis } from '~/composables/use_lenis'
 
 const { lenis } = useLenis()
@@ -13,5 +14,6 @@ provide('lenis', lenis)
 
   <main class="container mx-auto pt-25 px-5">
     <slot />
+    <Footer />
   </main>
 </template>

@@ -35,6 +35,11 @@ export function useWorkGrid(worksData: WorkItem[], onWorkClick: (work: WorkItem)
   let cameraOffset = { x: 0, y: 0 }
   let hoveredPlane: THREE.Mesh | null = null
 
+  // Auto-scroll variables
+  let autoScrollTime = 0
+  const AUTO_SCROLL_SPEED_X = 0.003
+  const AUTO_SCROLL_SPEED_Y = 0.002
+
   function initThree() {
     if (!canvasRef.value || !containerRef.value) return
 
@@ -61,11 +66,12 @@ export function useWorkGrid(worksData: WorkItem[], onWorkClick: (work: WorkItem)
     // Renderer
     renderer = new THREE.WebGLRenderer({
       canvas: canvasRef.value,
-      antialias: true,
+      antialias: false,
       alpha: false,
+      powerPreference: 'high-performance',
     })
     renderer.setSize(width, height)
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5))
 
     // Raycaster for hover detection
     raycaster = new THREE.Raycaster()
@@ -83,8 +89,8 @@ export function useWorkGrid(worksData: WorkItem[], onWorkClick: (work: WorkItem)
     const borderRadius = 0.15 // Border radius in world units
 
     // Create enough planes to fill the viewport + extra for infinite scroll
-    const planesPerRow = GRID_COLS * 3 // Triple for seamless infinite
-    const planesPerCol = GRID_ROWS * 3
+    const planesPerRow = GRID_COLS * 2 // Double for seamless infinite
+    const planesPerCol = GRID_ROWS * 2
 
     // All items have same width, uniform grid
     const cellWidth = PORTRAIT_WIDTH
@@ -147,11 +153,27 @@ export function useWorkGrid(worksData: WorkItem[], onWorkClick: (work: WorkItem)
     }
   }
 
+  let isRendering = true
+
   function animate() {
     animationId = requestAnimationFrame(animate)
-    updateInfiniteScroll()
-    updateHoverAnimation()
-    renderer.render(scene, camera)
+
+    if (isRendering) {
+      updateAutoScroll()
+      updateInfiniteScroll()
+      updateHoverAnimation()
+      renderer.render(scene, camera)
+    }
+  }
+
+  function updateAutoScroll() {
+    // Only auto-scroll when user is not dragging
+    if (!isDragging) {
+      autoScrollTime += 0.01
+      // Smooth movement with sine/cosine for organic feel
+      cameraOffset.x += AUTO_SCROLL_SPEED_X + Math.sin(autoScrollTime * 0.5) * 0.001
+      cameraOffset.y += AUTO_SCROLL_SPEED_Y + Math.cos(autoScrollTime * 0.3) * 0.0005
+    }
   }
 
   function updateHoverAnimation() {
@@ -177,12 +199,12 @@ export function useWorkGrid(worksData: WorkItem[], onWorkClick: (work: WorkItem)
       let newY = plane.userData.originalY + cameraOffset.y
 
       // Wrap horizontally
-      while (newX > gridWidth) newX -= gridWidth * 3
-      while (newX < -gridWidth * 2) newX += gridWidth * 3
+      while (newX > gridWidth) newX -= gridWidth * 2
+      while (newX < -gridWidth) newX += gridWidth * 2
 
       // Wrap vertically
-      while (newY > gridHeight * 2) newY -= gridHeight * 3
-      while (newY < -gridHeight) newY += gridHeight * 3
+      while (newY > gridHeight) newY -= gridHeight * 2
+      while (newY < -gridHeight) newY += gridHeight * 2
 
       plane.position.x = newX
       plane.position.y = newY
@@ -208,15 +230,23 @@ export function useWorkGrid(worksData: WorkItem[], onWorkClick: (work: WorkItem)
     }
   }
 
+  let mouseMoveThrottle = false
+
   function onMouseMove(event: MouseEvent) {
-    if (!containerRef.value) return
+    if (!containerRef.value || !isRendering) return
 
-    // Update raycaster for hover detection
-    const rect = containerRef.value.getBoundingClientRect()
-    mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1
-    mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1
+    // Throttle hover detection
+    if (!isDragging && !mouseMoveThrottle) {
+      mouseMoveThrottle = true
+      requestAnimationFrame(() => {
+        mouseMoveThrottle = false
+      })
 
-    if (!isDragging) {
+      // Update raycaster for hover detection
+      const rect = containerRef.value!.getBoundingClientRect()
+      mouse.x = ((event.clientX - rect.left) / rect.width) * 2 - 1
+      mouse.y = -((event.clientY - rect.top) / rect.height) * 2 + 1
+
       // Check for hover
       raycaster.setFromCamera(mouse, camera)
       const intersects = raycaster.intersectObjects(planes)
@@ -232,7 +262,9 @@ export function useWorkGrid(worksData: WorkItem[], onWorkClick: (work: WorkItem)
           containerRef.value.style.cursor = 'grab'
         }
       }
-    } else {
+    }
+
+    if (isDragging) {
       // Dragging
       const deltaX = event.clientX - previousMousePosition.x
       const deltaY = event.clientY - previousMousePosition.y
@@ -307,6 +339,27 @@ export function useWorkGrid(worksData: WorkItem[], onWorkClick: (work: WorkItem)
     window.addEventListener('mousemove', onMouseMove)
     window.addEventListener('mouseup', onMouseUp)
     window.addEventListener('resize', onResize)
+
+    // Intersection Observer to pause rendering when not visible
+    if (containerRef.value) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            isRendering = entry.isIntersecting
+          })
+        },
+        {
+          threshold: 0,
+          rootMargin: '200px',
+        }
+      )
+
+      observer.observe(containerRef.value)
+
+      onUnmounted(() => {
+        observer.disconnect()
+      })
+    }
   })
 
   onUnmounted(() => {
