@@ -13,7 +13,11 @@ function handleClick() {
 </script>
 
 <template>
-  <button @click="handleClick" :class="arabic ? 'font-en' : 'font-ar italic'">
+  <button
+    @click="handleClick"
+    class="cursor-pointer"
+    :class="arabic ? 'font-en' : 'font-ar italic'"
+  >
     {{ arabic ? 'ENG' : 'عربي' }}
   </button>
 </template>
