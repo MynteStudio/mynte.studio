@@ -114,9 +114,9 @@ function getTagClasses(tag: string) {
 </script>
 
 <template>
-  <section ref="sectionRef" id="expertise-section" class="mt-40 xl:min-h-[200vh] relative">
+  <section ref="sectionRef" id="expertise-section" class="mt-40 xl:min-h-[200vh] relative pb-30">
     <!-- Mobile version -->
-    <div class="xl:hidden absolute top-0 left-0 right-0">
+    <div class="xl:hidden">
       <h2>OUR PROCESS AND EXPERTISE</h2>
 
       <div class="mt-20 flex flex-col gap-10 items-start">

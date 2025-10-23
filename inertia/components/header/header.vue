@@ -12,6 +12,7 @@ const { isScrollingDown } = useScrollDirection()
     dir="ltr"
     class="fixed top-0 left-0 right-0 z-50 transition-opacity duration-300"
     :class="{ 'opacity-0 pointer-events-none': isScrollingDown }"
+    @click.stop
   >
     <div class="container mx-auto h-25 flex justify-between items-center px-5">
       <Logo />

@@ -2,6 +2,7 @@
 import { Head } from '@inertiajs/vue3'
 import Expertise from '~/app/expertise/expertise.vue'
 import Hero from '~/components/hero/hero.vue'
+import Works from '~/components/works/works.vue'
 </script>
 
 <template>
@@ -9,4 +10,5 @@ import Hero from '~/components/hero/hero.vue'
 
   <Hero />
   <Expertise />
+  <Works />
 </template>

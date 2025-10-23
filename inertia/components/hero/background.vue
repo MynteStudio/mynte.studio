@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { onMounted, onUnmounted, ref } from 'vue'
 import * as THREE from 'three'
-import { fragmentShader } from '~/glsl/fragment_shader'
-import { vertexShader } from '~/glsl/vertex_shader'
+import vertexShader from '~/glsl/hero.vert?raw'
+import fragmentShader from '~/glsl/hero.frag?raw'
 import { useGlobalMouse } from '~/composables/use_global_mouse'
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)

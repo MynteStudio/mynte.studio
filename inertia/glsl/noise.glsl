@@ -1,4 +1,3 @@
-export const cnoise21 = `
 vec2 fade(vec2 t) {return t*t*t*(t*(t*6.0-15.0)+10.0);}
 vec4 permute(vec4 x){return mod(((x*34.0)+1.0)*x, 289.0);}
 
@@ -33,4 +32,3 @@ float cnoise21(vec2 P){
   float n_xy = mix(n_x.x, n_x.y, fade_xy.y);
   return 2.3 * n_xy;
 }
-`
