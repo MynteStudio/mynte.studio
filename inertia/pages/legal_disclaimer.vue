@@ -4,6 +4,8 @@ import { useI18nExtended } from '~/composables/use_i18n_extended'
 
 const { arabic, dir, t } = useI18nExtended()
 const activeSection = ref<string | null>(null)
+const isScrolling = ref(false)
+let timeoutId: ReturnType<typeof setTimeout> | null = null
 
 const sections = computed(() => [
   { id: 'company-info', title: t('legal_disclaimer_page.nav.company_info') },
@@ -18,11 +20,25 @@ const sections = computed(() => [
 
 const handleNavClick = (e: Event, sectionId: string) => {
   e.preventDefault()
+
+  // Empêcher les clics pendant qu'une animation est en cours
+  if (isScrolling.value) return
+
+  // Annuler le timeout précédent s'il existe
+  if (timeoutId !== null) {
+    clearTimeout(timeoutId)
+  }
+
+  isScrolling.value = true
   activeSection.value = sectionId
   const element = document.getElementById(sectionId)
   if (element) {
     element.scrollIntoView({ behavior: 'smooth', block: 'center' })
-    setTimeout(() => (activeSection.value = null), 1000)
+    timeoutId = setTimeout(() => {
+      activeSection.value = null
+      isScrolling.value = false
+      timeoutId = null
+    }, 1000)
   }
 }
 </script>
