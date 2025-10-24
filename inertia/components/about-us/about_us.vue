@@ -137,15 +137,17 @@ function getWordClass(word: string) {
       </svg>
       WhatsApp
     </a>
-    <a
-      href=""
+    <button
+      data-cal-link="mynte/30min"
+      data-cal-namespace="30min"
+      data-cal-config='{"layout":"month_view"}'
       :class="[
         'button button-2 flex flex-row justify-center items-center p-[10px] gap-[10px] w-[196.76px] h-[40px] bg-[linear-gradient(180deg,#1D1B1C_0%,#191718_81.19%,#252120_96.35%)] shadow-[inset_0_0_0.25px_1.25px_#262524,inset_3px_5px_2px_-4.75px_#FFFFFF,inset_1.25px_1.5px_0_rgba(0,0,0,0.75),inset_0_4.75px_0.25px_-2.5px_#FBFBFB,inset_1px_1px_3px_3px_#1A1818,inset_0_-3px_1px_rgba(0,0,0,0.5),inset_2.5px_-2px_3px_rgba(124,108,94,0.75),inset_0_-3px_3px_1px_rgba(255,245,221,0.1)] rounded-[74px]',
         { visible: buttonsVisible },
       ]"
     >
       Book a call
-    </a>
+    </button>
     <a
       href="mailto:hello@mynte.studio"
       :class="[

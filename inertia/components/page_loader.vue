@@ -100,6 +100,9 @@ function checkCanHide() {
 
 function hideLoader() {
   setTimeout(() => {
+    // Reset scroll position before hiding
+    window.scrollTo(0, 0)
+
     isHiding.value = true
     const loaderElement = document.getElementById('page-loader')
     if (loaderElement) {
@@ -112,6 +115,8 @@ function hideLoader() {
       if (loaderElement) {
         loaderElement.remove()
       }
+      // Re-enable scroll
+      document.body.style.overflow = ''
     }, 600) // Match CSS transition duration
   }, 300)
 }
