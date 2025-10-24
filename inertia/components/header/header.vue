@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Link } from '@inertiajs/vue3'
 import Logo from '~/components/svg/logo.vue'
 import DxbTime from './dxb_time.vue'
 import Lang from './lang.vue'
@@ -15,7 +16,7 @@ const { isScrollingDown } = useScrollDirection()
     @click.stop
   >
     <div class="container mx-auto h-25 flex justify-between items-center px-5">
-      <Logo />
+      <Link href="/"><Logo /></Link>
 
       <div class="flex gap-1">
         <DxbTime />

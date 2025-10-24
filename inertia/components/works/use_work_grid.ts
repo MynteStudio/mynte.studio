@@ -13,6 +13,7 @@ import {
 } from './works_data'
 import vertexShader from '~/glsl/rounded_plane.vert?raw'
 import fragmentShader from '~/glsl/rounded_plane.frag?raw'
+import { usePageLoader } from '~/composables/use_page_loader'
 
 export function useWorkGrid(worksData: WorkItem[], onWorkClick: (work: WorkItem) => void) {
   const canvasRef = ref<HTMLCanvasElement | null>(null)
@@ -87,6 +88,7 @@ export function useWorkGrid(worksData: WorkItem[], onWorkClick: (work: WorkItem)
   function createInfiniteGrid() {
     const textureLoader = new THREE.TextureLoader()
     const borderRadius = 0.15 // Border radius in world units
+    const { registerAsset, markAssetLoaded } = usePageLoader()
 
     // Create enough planes to fill the viewport + extra for infinite scroll
     const planesPerRow = GRID_COLS * 2 // Double for seamless infinite
@@ -107,7 +109,18 @@ export function useWorkGrid(worksData: WorkItem[], onWorkClick: (work: WorkItem)
         const planeHeight = isPortrait ? PORTRAIT_HEIGHT : LANDSCAPE_HEIGHT
 
         const geometry = new THREE.PlaneGeometry(planeWidth, planeHeight)
-        const texture = textureLoader.load(workItem.src)
+
+        // Register the texture asset for tracking
+        const textureId = `work-texture-${row}-${col}`
+        registerAsset(textureId)
+
+        const texture = textureLoader.load(
+          workItem.src,
+          // onLoad callback
+          () => {
+            markAssetLoaded(textureId)
+          }
+        )
         // Don't set colorSpace for ShaderMaterial - we handle it manually
 
         // Shader material with rounded corners

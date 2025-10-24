@@ -1,1 +1,184 @@
-{}
+{
+  "legal_disclaimer_page": {
+    "page_title": "Legal Disclaimer",
+    "page_description": "This page contains important legal information about Mynte Studio and the use of our website.",
+
+    "nav": {
+      "company_info": "Company Information",
+      "responsible": "Responsible for the Website",
+      "hosting": "Website Hosting",
+      "intellectual_property": "Intellectual Property",
+      "liability": "Limitation of Liability",
+      "applicable_law": "Applicable Law",
+      "personal_data": "Personal Data / GDPR",
+      "cookies": "Cookies / Tracking"
+    },
+
+    "company_info": {
+      "title": "Company Information",
+      "company_name_label": "Company name:",
+      "legal_form_label": "Legal form:",
+      "legal_form_value": "Limited Liability Company (LLC)",
+      "trade_license_label": "Trade license number:",
+      "registered_address_label": "Registered address:",
+      "email_label": "Email:",
+      "phone_label": "Phone:",
+      "description": "Mynte Studio Webdesign LLC is a limited liability company registered in Dubai, United Arab Emirates, operating under the applicable laws and regulations of the UAE."
+    },
+
+    "responsible": {
+      "title": "Responsible for the Website",
+      "publisher_label": "Publisher:",
+      "responsible_for_content_label": "Responsible for content:",
+      "description": "The individuals named above are responsible for all editorial content published on this website and ensure that all information provided complies with applicable laws and regulations. For any inquiries regarding website content, please contact us at hello{'@'}mynte.studio."
+    },
+
+    "hosting": {
+      "title": "Website Hosting",
+      "hosting_provider_label": "Hosting provider:",
+      "address_label": "Address:",
+      "email_label": "Email:",
+      "description": "Our website is hosted on secure servers provided by Hetzner Online GmbH, a reputable hosting provider based in Germany. All technical infrastructure complies with European data protection standards and industry best practices for security and reliability."
+    },
+
+    "intellectual_property": {
+      "title": "Intellectual Property",
+      "paragraph_1": "All content on this website, including but not limited to text, graphics, logos, images, videos, audio clips, digital downloads, data compilations, and software, is the property of Mynte Studio Webdesign LLC or has been licensed to us by third parties.",
+      "paragraph_2": "The compilation of all content on this site is the exclusive property of Mynte Studio and is protected by UAE and international copyright laws. All trademarks, service marks, and trade names are proprietary to Mynte Studio or their respective owners.",
+      "paragraph_3": "Any reproduction, distribution, modification, or use of website content without prior written consent from Mynte Studio is strictly prohibited and may result in legal action. For licensing inquiries, please contact hello{'@'}mynte.studio."
+    },
+
+    "liability": {
+      "title": "Limitation of Liability",
+      "paragraph_1": "The information provided on this website is for general informational purposes only and is provided \"as is\" without any warranties, express or implied. While we strive to ensure the accuracy and timeliness of all information, Mynte Studio makes no representations or warranties of any kind regarding the completeness, accuracy, reliability, suitability, or availability of the website or the information contained therein.",
+      "paragraph_2": "Mynte Studio shall not be held liable for any direct, indirect, incidental, special, consequential, or punitive damages arising from or related to your use of this website, including but not limited to loss of profits, data, or other intangible losses, even if we have been advised of the possibility of such damages.",
+      "paragraph_3": "Any reliance you place on information from this website is strictly at your own risk. We reserve the right to modify, suspend, or discontinue any aspect of the website at any time without notice."
+    },
+
+    "applicable_law": {
+      "title": "Applicable Law & Jurisdiction",
+      "paragraph_1": "For clients based in the United Arab Emirates, these terms and any disputes arising from them shall be governed by and construed in accordance with the laws of the UAE. Any legal proceedings shall be subject to the exclusive jurisdiction of the competent courts in Dubai.",
+      "paragraph_2": "For clients based in the European Union, EU law and the General Data Protection Regulation (GDPR) may apply to the processing of personal data. In such cases, clients have the rights afforded to them under EU data protection legislation.",
+      "paragraph_3": "The applicable law and competent jurisdiction for dispute resolution will depend on the client's location and the specific terms of any contractual agreement entered into with Mynte Studio. For clarity on which laws apply to your specific situation, please contact us at hello{'@'}mynte.studio."
+    },
+
+    "personal_data": {
+      "title": "Personal Data / GDPR",
+      "paragraph_1": "Mynte Studio is committed to protecting your privacy and handling your personal data with care and in compliance with applicable data protection laws, including UAE data protection regulations and the EU General Data Protection Regulation (GDPR) where applicable.",
+      "paragraph_2": "We do not collect personal data through automated means on our website. Any personal data you provide to us (such as name, email address, or phone number) is collected only when you voluntarily submit it through contact forms or direct communication. This data is processed solely for the purpose of responding to your inquiries and providing the services you request.",
+      "paragraph_3": "We do not use analytics tools, tracking technologies, or third-party services that collect personal information. Your data is not shared with third parties, sold, or used for marketing purposes without your explicit consent. We retain personal data only for as long as necessary to fulfill the purposes for which it was collected.",
+      "paragraph_4": "Under GDPR, EU residents have the right to access, rectify, erase, restrict processing, object to processing, and request portability of their personal data. To exercise any of these rights or for any data protection inquiries, please contact us at hello{'@'}mynte.studio."
+    },
+
+    "cookies": {
+      "title": "Cookies / Tracking",
+      "paragraph_1": "This website uses only strictly necessary cookies that are essential for the proper functioning and security of the website. These cookies do not collect or store any personal information and cannot be used to identify individual users.",
+      "paragraph_2": "We do not use any tracking, analytics, advertising, or marketing cookies. We do not employ third-party tracking services such as Google Analytics, Facebook Pixel, or any similar technologies. Your browsing activity on our website is not monitored, recorded, or analyzed.",
+      "paragraph_3": "The essential cookies we use include session management cookies and security cookies that ensure the website functions correctly and securely. These cookies are automatically deleted when you close your browser.",
+      "paragraph_4": "Since we only use strictly necessary cookies and do not process personal data through cookies, no consent banner is required under GDPR. If you have any questions about our cookie usage, please contact hello{'@'}mynte.studio."
+    }
+  },
+  "terms_of_service_page": {
+    "page_title": "Terms of Service",
+    "page_description": "These Terms of Service govern the contractual relationship between Mynte Studio and its clients for all services provided.",
+
+    "nav": {
+      "company_info": "Company Information",
+      "services_provided": "Services Provided",
+      "acceptance": "Acceptance of Terms",
+      "pricing": "Pricing and Payment",
+      "duration": "Duration and Termination",
+      "responsibilities": "Responsibilities and Liability",
+      "intellectual_property": "Intellectual Property",
+      "confidentiality": "Confidentiality",
+      "applicable_law": "Applicable Law",
+      "contact": "Contact"
+    },
+
+    "company_info": {
+      "title": "Company Information",
+      "paragraph_1": "All services described in these Terms of Service are provided by Mynte Studio Webdesign LLC, a limited liability company registered in Dubai, United Arab Emirates.",
+      "paragraph_2": "For complete company details including registration information, registered address, and contact information, please refer to our Legal Disclaimer page.",
+      "contact_label": "Contact:",
+      "email_phone": "hello{'@'}mynte.studio {'|'} {'+33 7 43 62 44 01'}"
+    },
+
+    "services_provided": {
+      "title": "Services Provided",
+      "paragraph_1": "Mynte Studio offers a comprehensive range of digital services including web design, web development, website maintenance, e-commerce solutions, graphic design, branding, and digital consultancy services. Each project is tailored to meet the specific needs and objectives of our clients.",
+      "paragraph_2": "All services are described in detail in the project proposal, quotation, or contract provided to the client. The scope of work, deliverables, timeline, and specific requirements are clearly outlined in these documents to ensure mutual understanding and agreement.",
+      "paragraph_3": "Any additional work, modifications, or services that fall outside the initially agreed scope will require prior written approval from both parties. Such additional work may incur extra charges based on the complexity, time required, and resources needed. Changes to the project scope will be documented through written amendments to the original agreement.",
+      "paragraph_4": "Mynte Studio reserves the right to subcontract specific tasks or engage third-party specialists when necessary to deliver the highest quality results. However, Mynte Studio remains fully responsible for the quality and delivery of all services."
+    },
+
+    "acceptance": {
+      "title": "Acceptance of Terms",
+      "paragraph_1": "By placing an order, signing a project proposal or quotation, making a payment, or otherwise engaging Mynte Studio's services, the client explicitly acknowledges that they have read, understood, and agreed to be bound by these Terms of Service in their entirety.",
+      "paragraph_2": "Contracts between Mynte Studio and the client may be formalized through various means including but not limited to: email confirmation, signed quotation or proposal, formal written agreement, or electronic acceptance through our website or platform.",
+      "paragraph_3": "If the client does not agree with any part of these Terms of Service, they should not proceed with engaging our services and should contact us to discuss their concerns before any work commences.",
+      "paragraph_4": "These Terms of Service may be updated from time to time. The version applicable to any project is the version in effect at the time the contract is signed or the order is placed. Continued use of our services after updates constitutes acceptance of the revised terms."
+    },
+
+    "pricing": {
+      "title": "Pricing and Payment",
+      "paragraph_1": "All prices for services are indicated in the quotation or proposal provided to the client and are valid for the period specified in the document. Prices are quoted in the currency specified in the quotation (typically USD, AED, or EUR) and are subject to change if the project scope changes or if the validity period expires.",
+      "paragraph_2": "Payments are accepted via bank transfer, credit card, or other payment methods as mutually agreed upon. Payment processing fees, if applicable, may be borne by the client or included in the total price as specified in the quotation.",
+      "paragraph_3": "Standard payment terms require a 50% deposit upfront before work commences, with the remaining 50% due upon project completion and delivery. Alternative payment schedules may be specified in individual quotations for larger projects (e.g., milestone-based payments or monthly retainers for ongoing services).",
+      "paragraph_4": "Late payments may incur a penalty of 1.5% per month (or the maximum rate allowed by applicable law, whichever is lower) calculated on the outstanding amount. Mynte Studio reserves the right to suspend work or withhold deliverables until payment obligations are fulfilled.",
+      "paragraph_5": "All prices are exclusive of applicable taxes unless otherwise stated. Clients are responsible for any taxes, duties, or charges imposed by their local jurisdiction."
+    },
+
+    "duration": {
+      "title": "Duration and Termination",
+      "paragraph_1": "The duration of services is specified in the contract, quotation, or project proposal. For one-time projects, the service period extends from the contract signing until final delivery and acceptance. For ongoing services such as maintenance or retainer agreements, the duration and renewal terms are clearly stated in the agreement.",
+      "paragraph_2": "Either party may terminate the contract with written notice in case of material breach, non-performance, or violation of the terms outlined in the agreement. The notice period and specific conditions for termination are defined in the individual contract.",
+      "paragraph_3": "Termination of services does not exempt the client from paying for work already performed, services rendered, or costs incurred up to the date of termination. Upon termination, the client remains obligated to pay all outstanding invoices and fees for completed deliverables.",
+      "paragraph_4": "In the event of termination, Mynte Studio will provide the client with all completed work and deliverables that have been paid for. Work-in-progress or incomplete deliverables will be provided at Mynte Studio's discretion, potentially with an adjusted fee based on the work completed.",
+      "paragraph_5": "For ongoing service agreements, either party may choose not to renew the contract by providing written notice within the timeframe specified in the agreement (typically 30 days before the renewal date)."
+    },
+
+    "responsibilities": {
+      "title": "Responsibilities and Liability",
+      "paragraph_1": "Mynte Studio commits to performing all services with professional diligence, industry best practices, and a high standard of quality. We will use reasonable skill and care in executing the work and meeting the deliverables as outlined in the project agreement.",
+      "paragraph_2": "The client is responsible for providing accurate, complete, and timely information, materials, content, access credentials, and any other resources necessary for the successful execution of the project. Delays in providing required materials may impact project timelines.",
+      "paragraph_3": "The client is responsible for reviewing and approving deliverables within the timeframe specified in the agreement. Failure to provide feedback or approval within the agreed timeframe will be considered as acceptance of the deliverables.",
+      "paragraph_4": "Mynte Studio is not liable for damages, losses, or issues resulting from incorrect, incomplete, or misleading information supplied by the client. The client warrants that all content, materials, and information provided are accurate, lawful, and do not infringe on any third-party rights.",
+      "paragraph_5": "To the maximum extent permitted by applicable law, Mynte Studio's total liability for any claims arising from or related to the services provided is limited to the total fees paid by the client for the specific service in question.",
+      "paragraph_6": "Mynte Studio is not liable for indirect, incidental, consequential, or punitive damages including but not limited to loss of profits, revenue, data, or business opportunities, even if advised of the possibility of such damages."
+    },
+
+    "intellectual_property": {
+      "title": "Intellectual Property",
+      "paragraph_1": "All work products, deliverables, designs, code, graphics, documentation, and any other materials created by Mynte Studio in connection with the project remain the exclusive property of Mynte Studio until full payment is received from the client.",
+      "paragraph_2": "Upon receipt of full payment for the services rendered, Mynte Studio grants the client the rights to use, reproduce, and display the delivered work for the intended purpose as specified in the project agreement. This transfer of usage rights does not constitute a transfer of ownership of the underlying intellectual property.",
+      "paragraph_3": "Any reuse, modification, adaptation, redistribution, or commercial exploitation of the delivered work beyond the scope and purpose agreed upon in the original contract requires prior written permission from Mynte Studio and may be subject to additional licensing fees.",
+      "paragraph_4": "Mynte Studio retains the right to use the work created for the client as part of its portfolio, case studies, marketing materials, and promotional activities unless a specific non-disclosure or confidentiality agreement states otherwise.",
+      "paragraph_5": "Third-party assets, plugins, libraries, fonts, stock images, or other licensed materials used in the project remain the property of their respective owners and are subject to their own licensing terms. The client is responsible for obtaining appropriate licenses for any third-party assets they wish to use.",
+      "paragraph_6": "The client warrants that all content, materials, trademarks, and intellectual property they provide for the project are owned by them or properly licensed for use, and that their use does not infringe on any third-party rights."
+    },
+
+    "confidentiality": {
+      "title": "Confidentiality",
+      "paragraph_1": "Both Mynte Studio and the client agree to maintain confidentiality regarding sensitive or proprietary information that is specifically designated as confidential during the course of the project. This includes but is not limited to business strategies, financial information, trade secrets, and any data explicitly marked as confidential.",
+      "paragraph_2": "However, this confidentiality obligation does not restrict Mynte Studio from publicly sharing general processes, methodologies, workflows, technical tutorials, educational content, live coding sessions, blog posts, or code that is intended to be open-source or used for educational purposes.",
+      "paragraph_3": "Mynte Studio reserves the right to showcase project work, design mockups, website screenshots, and general project outcomes as part of its portfolio and marketing materials unless a specific non-disclosure agreement (NDA) has been signed that explicitly prohibits such disclosure.",
+      "paragraph_4": "Any disclosure of client-specific sensitive information, proprietary data, or materials that have been explicitly designated as confidential will require prior written consent from the client.",
+      "paragraph_5": "The confidentiality obligations outlined in this section survive the termination or expiration of the service agreement and remain in effect for a period of three (3) years from the date of project completion or as otherwise specified in a separate confidentiality agreement."
+    },
+
+    "applicable_law": {
+      "title": "Applicable Law and Dispute Resolution",
+      "paragraph_1": "These Terms of Service and any contracts or agreements between Mynte Studio and clients are governed by the laws of the United Arab Emirates. For clients based in the UAE, all legal matters and disputes arising from these terms shall be subject to the exclusive jurisdiction of the competent courts in Dubai.",
+      "paragraph_2": "For clients located in the European Union, EU law and relevant consumer protection regulations may apply to the contractual relationship. In such cases, clients have the rights and protections afforded to them under EU legislation.",
+      "paragraph_3": "In the event of a dispute, both parties agree to first attempt to resolve the matter through good faith negotiations and mediation before resorting to formal legal proceedings. This approach aims to achieve an amicable resolution that is fair and satisfactory to both parties.",
+      "paragraph_4": "The applicable law and competent jurisdiction for dispute resolution will ultimately depend on the client's location, the nature of the contract, and the specific terms outlined in the project agreement. For clarity on which laws and courts have jurisdiction over your specific situation, please contact us at hello{'@'}mynte.studio."
+    },
+
+    "contact": {
+      "title": "Contact",
+      "paragraph_1": "For any questions, concerns, or clarifications regarding these Terms of Service, a specific project, or any contractual matter, please do not hesitate to contact us:",
+      "contact_info": "hello{'@'}mynte.studio {'|'} {'+33 7 43 62 44 01'}",
+      "paragraph_2": "We are committed to transparent communication and will respond to all inquiries in a timely manner. Our team is available to discuss your needs, address concerns, and provide any additional information you may require before engaging our services."
+    }
+  }
+}

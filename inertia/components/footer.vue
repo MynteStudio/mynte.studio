@@ -33,8 +33,8 @@ import { Link } from '@inertiajs/vue3'
       </div>
 
       <div class="flex gap-3 text-sm font-light italic">
-        <Link href="">Terms of service</Link>
-        <Link href="">Legal disclaimer</Link>
+        <Link href="/terms-of-service">Terms of service</Link>
+        <Link href="/legal-disclaimer">Legal disclaimer</Link>
       </div>
     </div>
   </footer>

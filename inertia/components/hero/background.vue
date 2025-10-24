@@ -4,9 +4,11 @@ import * as THREE from 'three'
 import vertexShader from '~/glsl/hero.vert?raw'
 import fragmentShader from '~/glsl/hero.frag?raw'
 import { useGlobalMouse } from '~/composables/use_global_mouse'
+import { usePageLoader } from '~/composables/use_page_loader'
 
 const canvasRef = ref<HTMLCanvasElement | null>(null)
 const { target } = useGlobalMouse()
+const { registerAsset, markAssetLoaded } = usePageLoader()
 
 let scene: THREE.Scene
 let camera: THREE.OrthographicCamera
@@ -16,6 +18,9 @@ let animationFrameId: number
 
 const setupThreeScene = () => {
   if (!canvasRef.value) return
+
+  // Register the hero background as an asset
+  registerAsset('hero-background')
 
   // Scene
   scene = new THREE.Scene()
@@ -48,6 +53,11 @@ const setupThreeScene = () => {
   // Mesh
   const mesh = new THREE.Mesh(geometry, material)
   scene.add(mesh)
+
+  // Mark as loaded after first render
+  requestAnimationFrame(() => {
+    markAssetLoaded('hero-background')
+  })
 
   // Animation loop
   const animate = () => {

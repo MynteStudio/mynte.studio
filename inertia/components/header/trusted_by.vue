@@ -21,9 +21,11 @@ onMounted(() => {
   <div class="w-full">
     <span class="block mb-4 text-center text-xs font-light font-en">{{ t('trusted_by') }}</span>
 
-    <div dir="ltr" :class="[$style.container, 'container']">
-      <div v-if="mounted" v-for="i in 2" :key="i">
-        <component v-for="(Logo, index) in logos" :key="index" :is="Logo" />
+    <div class="w-full max-w-[800px] mx-auto">
+      <div dir="ltr" :class="$style.container">
+        <div v-if="mounted" v-for="i in 2" :key="i">
+          <component v-for="(Logo, index) in logos" :key="index" :is="Logo" />
+        </div>
       </div>
     </div>
   </div>
@@ -42,8 +44,6 @@ onMounted(() => {
   @apply relative flex items-center;
   overflow: hidden;
   height: 50px;
-  max-width: 800px;
-  margin: 0 auto;
   mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
   -webkit-mask-image: linear-gradient(
     to right,
