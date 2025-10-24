@@ -2,13 +2,25 @@
 import { onMounted, onUnmounted, ref, inject, computed, type Ref } from 'vue'
 import type Lenis from 'lenis'
 import { devTags, designTags, briefingTags, marketingTags } from './tags'
+import { useI18nExtended } from '~/composables/use_i18n_extended'
 
-const expertiseData = [
+const { arabic, dir, t } = useI18nExtended()
+
+const expertiseDataEn = [
   { title: 'Briefing, Research, & Conceptualization', tags: briefingTags },
   { title: 'Design', tags: designTags },
   { title: 'Development', tags: devTags },
   { title: 'Marketing', tags: marketingTags },
 ]
+
+const expertiseDataAr = [
+  { title: 'التوجيه، البحث، وتطوير المفاهيم', tags: briefingTags },
+  { title: 'التصميم', tags: designTags },
+  { title: 'التطوير', tags: devTags },
+  { title: 'التسويق', tags: marketingTags },
+]
+
+const expertiseData = computed(() => (arabic.value ? expertiseDataAr : expertiseDataEn))
 
 function shuffleTags(tags: string[]) {
   const shuffled = [...tags]
@@ -27,7 +39,7 @@ const shuffledTags = ref<string[]>([])
 
 const activeTags = computed(() => {
   if (activeIndex.value >= 0 && activeIndex.value <= 3) {
-    return expertiseData[activeIndex.value].tags
+    return expertiseData.value[activeIndex.value].tags
   }
   return []
 })
@@ -63,20 +75,14 @@ onMounted(() => {
   const allTags = [...briefingTags, ...designTags, ...devTags, ...marketingTags]
   shuffledTags.value = shuffleTags(allTags)
 
-  // Attendre que Lenis soit initialisé
   const checkLenis = setInterval(() => {
     if (lenis?.value) {
       clearInterval(checkLenis)
-
-      // Écouter l'événement scroll de Lenis
       lenis.value.on('scroll', scrollHandler)
-
-      // Appeler une première fois pour initialiser
       scrollHandler()
     }
   }, 100)
 
-  // Cleanup du setInterval après 5 secondes si Lenis n'est pas trouvé
   setTimeout(() => clearInterval(checkLenis), 5000)
 })
 
@@ -114,10 +120,15 @@ function getTagClasses(tag: string) {
 </script>
 
 <template>
-  <section ref="sectionRef" id="expertise-section" class="mt-40 xl:min-h-[200vh] relative pb-30">
+  <section
+    ref="sectionRef"
+    id="expertise-section"
+    class="mt-40 xl:min-h-[200vh] relative pb-30"
+    :dir
+  >
     <!-- Mobile version -->
     <div class="xl:hidden">
-      <h2>OUR PROCESS AND EXPERTISE</h2>
+      <h2>{{ t('page_title') }}</h2>
 
       <div class="mt-20 flex flex-col gap-10 items-start">
         <div
@@ -143,7 +154,7 @@ function getTagClasses(tag: string) {
 
     <!-- Desktop version -->
     <div class="hidden xl:block sticky xl:top-[15vh] 2xl:top-[25vh] left-0 right-0">
-      <h2>OUR PROCESS AND EXPERTISE</h2>
+      <h2>{{ t('page_title') }}</h2>
 
       <div class="mt-20 flex flex-nowrap">
         <aside class="w-1/2 flex flex-col gap-15">
@@ -160,3 +171,14 @@ function getTagClasses(tag: string) {
     </div>
   </section>
 </template>
+
+<i18n>
+  {
+    "en": {
+      "page_title": "OUR PROCESS AND EXPERTISE"
+    },
+    "ar": {
+      "page_title": "عملياتنا وخبرتنا"
+    }
+  }
+</i18n>

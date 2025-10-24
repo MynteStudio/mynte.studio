@@ -1,10 +1,23 @@
 <script setup lang="ts">
-import { ref, inject, type Ref } from 'vue'
+import { ref, inject, type Ref, computed } from 'vue'
 import type Lenis from 'lenis'
 import { worksData } from './works_data'
 import type { WorkItem } from './works_data'
 import { useWorkGrid } from './use_work_grid'
 import WorkModal from './work_modal.vue'
+import { useI18nExtended } from '~/composables/use_i18n_extended'
+
+const { dir, t, arabic } = useI18nExtended()
+
+// Get localized works data for mobile list
+const localizedWorks = computed(() => {
+  const locale = arabic.value ? 'ar' : 'en'
+  return worksData.map((work) => ({
+    ...work,
+    localizedTitle: work.title[locale],
+    localizedCategory: work.category[locale],
+  }))
+})
 
 const lenis = inject<Ref<Lenis | null>>('lenis')
 const selectedWork = ref<WorkItem | null>(null)
@@ -33,23 +46,24 @@ const { canvasRef, containerRef, onMouseDown } = useWorkGrid(worksData, handleWo
 
 <template>
   <section
+    :dir
     ref="containerRef"
     class="relative min-h-screen w-screen overflow-hidden lg:cursor-grab left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"
   >
     <!-- NOTE: mobile -->
     <div class="lg:hidden container mx-auto px-5 py-10">
-      <h2 class="text-white mb-10">SELECTED WORKS</h2>
+      <h2 class="text-white mb-10">{{ t('page_title') }}</h2>
       <div class="flex flex-col">
         <button
-          v-for="(work, index) in worksData"
+          v-for="(work, index) in localizedWorks"
           :key="index"
-          @click="handleWorkClick(work)"
+          @click="handleWorkClick(worksData[index])"
           class="text-center group py-6 border-b border-white/15 last:border-b-0"
         >
           <h3 class="font-serif italic text-3xl transition-opacity hover:opacity-70">
-            {{ work.title }}
+            {{ work.localizedTitle }}
           </h3>
-          <p class="text-sm opacity-60 mt-1">{{ work.category }} — {{ work.year }}</p>
+          <p class="text-sm opacity-60 mt-1">{{ work.localizedCategory }} — {{ work.year }}</p>
         </button>
       </div>
     </div>
@@ -57,7 +71,7 @@ const { canvasRef, containerRef, onMouseDown } = useWorkGrid(worksData, handleWo
     <!-- NOTE: desktop -->
     <div class="hidden lg:block absolute top-10 left-0 right-0 z-10 pointer-events-none">
       <div class="container mx-auto px-5">
-        <h2 class="text-white">SELECTED WORKS</h2>
+        <h2 class="text-white">{{ t('page_title') }}</h2>
       </div>
     </div>
     <canvas ref="canvasRef" class="hidden lg:block w-full h-full" @mousedown="onMouseDown" />
@@ -78,3 +92,14 @@ const { canvasRef, containerRef, onMouseDown } = useWorkGrid(worksData, handleWo
     <WorkModal :is-open="isModalOpen" :work="selectedWork" @close="closeModal" />
   </section>
 </template>
+
+<i18n>
+  {
+    "en": {
+      "page_title": "SELECTED WORKS"
+    },
+    "ar": {
+      "page_title": "أعمال مختارة"
+    }
+  }
+</i18n>

@@ -1,11 +1,11 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import { useI18nExtended } from '~/composables/use_i18n_extended'
 
-const { t } = useI18nExtended()
+const { arabic, dir, t } = useI18nExtended()
 const activeSection = ref<string | null>(null)
 
-const sections = [
+const sections = computed(() => [
   { id: 'company-info', title: t('legal_disclaimer_page.nav.company_info') },
   { id: 'responsible', title: t('legal_disclaimer_page.nav.responsible') },
   { id: 'hosting', title: t('legal_disclaimer_page.nav.hosting') },
@@ -14,7 +14,7 @@ const sections = [
   { id: 'applicable-law', title: t('legal_disclaimer_page.nav.applicable_law') },
   { id: 'personal-data', title: t('legal_disclaimer_page.nav.personal_data') },
   { id: 'cookies', title: t('legal_disclaimer_page.nav.cookies') },
-]
+])
 
 const handleNavClick = (e: Event, sectionId: string) => {
   e.preventDefault()
@@ -28,11 +28,14 @@ const handleNavClick = (e: Event, sectionId: string) => {
 </script>
 
 <template>
-  <section class="mt-14 lg:mt-32 mx-5">
+  <section class="mt-14 lg:mt-32 mx-5" :dir>
     <h1 class="text-center text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-serif italic">
       {{ t('legal_disclaimer_page.page_title') }}
     </h1>
-    <p class="mx-auto sm:text-lg md:text-xl lg:text-2xl text-center max-w-[55ch] my-10">
+    <p
+      :class="arabic ? 'pt-3 italic' : ''"
+      class="mx-auto sm:text-lg md:text-xl lg:text-2xl text-center max-w-[55ch] my-10"
+    >
       {{ t('legal_disclaimer_page.page_description') }}
     </p>
     <span class="separator"></span>

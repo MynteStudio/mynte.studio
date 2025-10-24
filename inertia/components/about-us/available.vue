@@ -1,11 +1,15 @@
 <script setup lang="ts">
 import { useI18nExtended } from '~/composables/use_i18n_extended'
 
-const { t } = useI18nExtended()
+const { arabic, dir, t } = useI18nExtended()
 </script>
 
 <template>
-  <div class="text-lg available-badge inline-flex items-center gap-3 py-[0.3rem] pl-4 pr-4">
+  <div
+    :dir
+    :class="arabic ? 'pl-6' : 'pl-4'"
+    class="text-lg available-badge inline-flex items-center gap-3 py-[0.3rem] pr-4"
+  >
     <div class="light relative size-2 bg-[#00ff00] rounded-full"></div>
     <span class="translate-y-[-1px]">
       {{ t('available') }}
@@ -45,6 +49,9 @@ const { t } = useI18nExtended()
   {
     "en": {
       "available": "available for work now :)"
+    },
+    "ar": {
+      "available": "متاح للعمل الآن"
     }
   }
 </i18n>

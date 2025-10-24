@@ -35,6 +35,9 @@ onMounted(() => {
 {
   "en": {
     "trusted_by": "trusted by 10+ clients"
+  },
+  "ar": {
+    "trusted_by": "موثوق به من قبل أكثر من 10 عملاء"
   }
 }
 </i18n>
