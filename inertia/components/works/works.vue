@@ -46,6 +46,7 @@ const { canvasRef, containerRef, onMouseDown } = useWorkGrid(worksData, handleWo
 
 <template>
   <section
+    id="works-section"
     :dir
     ref="containerRef"
     class="relative min-h-screen w-screen overflow-hidden lg:cursor-grab left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]"

@@ -7,7 +7,7 @@ const { arabic, dir, t } = useI18nExtended()
 </script>
 
 <template>
-  <!-- <Background /> -->
+  <Background />
   <div class="relative min-h-[calc(100vh_-_6.25rem)] flex flex-col justify-between items-center">
     <div></div>
     <div class="flex flex-col items-center" :dir>

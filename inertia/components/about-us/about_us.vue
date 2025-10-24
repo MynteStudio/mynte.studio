@@ -95,11 +95,12 @@ function getWordClass(word: string) {
 </script>
 
 <template>
-  <div class="flex justify-center mt-36 lg:mt-64">
-    <Available />
-  </div>
+  <section id="contact-section">
+    <div class="flex justify-center mt-36 lg:mt-64">
+      <Available />
+    </div>
 
-  <div ref="textRef" :dir>
+    <div ref="textRef" :dir>
     <p
       :class="arabic ? 'italic' : ''"
       class="text-2xl md:text-3xl lg:text-4xl text-justify line-height-[150%] mt-20"
@@ -165,6 +166,7 @@ function getWordClass(word: string) {
       hello@mynte.studio
     </a>
   </div>
+  </section>
 </template>
 
 <i18n>
